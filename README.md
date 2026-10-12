@@ -4,9 +4,8 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)
 ![PO UI](https://img.shields.io/badge/PO_UI-21.33-535398)
 ![SCSS](https://img.shields.io/badge/Estilos-SCSS-CC6699?logo=sass&logoColor=white)
-![Vitest](https://img.shields.io/badge/Testes-Vitest-6E9F18?logo=vitest&logoColor=white)
 
-Projeto do teste técnico de Front-end da TOTVS. Contém dois componentes Angular reutilizáveis, **Select** e **Switch** e uma página para testar suas propriedades.
+Contém dois componentes Angular reutilizáveis, **Select** e **Switch** e uma página para testar suas propriedades.
 
 ## Ferramentas utilizadas
 
@@ -16,8 +15,6 @@ Projeto do teste técnico de Front-end da TOTVS. Contém dois componentes Angula
 | Angular Forms           | Integração com `ngModel` e Reactive Forms por `ControlValueAccessor`. |
 | HTML e SCSS             | Estrutura, estados visuais, responsividade e variáveis CSS.           |
 | PO UI 21.33             | Abas, inputs e checkboxes da página de demonstração.                  |
-| Vitest e jsdom          | Testes dos componentes, da página e dos exemplos.                     |
-| Prettier e EditorConfig | Formatação e padronização dos arquivos.                               |
 
 O Select e o Switch são implementações próprias. O PO UI é utilizado nos controles da demonstração.
 
