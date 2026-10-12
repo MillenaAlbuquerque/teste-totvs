@@ -1,0 +1,40 @@
+<article [attr.aria-label]="'Documentação do ' + documentation.name">
+  <h2>{{ documentation.name }}</h2>
+  <p>{{ documentation.description }} {{ documentation.when }}</p>
+  <h3>Importação</h3>
+  <p>Seletor: <code>{{ documentation.selector }}</code>. Importe a classe e inclua-a em <code>imports</code> do componente standalone.</p>
+  <p>Use <code>FormsModule</code> com ngModel ou <code>ReactiveFormsModule</code> com Reactive Forms. Ajuste os caminhos dos imports ao seu arquivo. Dentro de um formulário com ngModel, informe um <code>name</code> único.</p>
+  <h3>Propriedades</h3>
+  <div class="tabela" tabindex="0" role="region" [attr.aria-label]="'Propriedades do ' + documentation.name">
+    <table>
+      <thead><tr><th scope="col">Nome</th><th scope="col">Tipo</th><th scope="col">Padrão</th><th scope="col">Obrigatória</th><th scope="col">Descrição</th></tr></thead>
+      <tbody>
+        @for (property of documentation.properties; track property.name) {
+          <tr><th scope="row"><code>{{ property.name }}</code></th><td><code>{{ property.type }}</code></td><td>{{ property.defaultValue }}</td><td>{{ property.required }}</td><td>{{ property.description }}</td></tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <p>Passe booleanos por binding, como <code>[disabled]="false"</code>, e não como texto.</p>
+  <h3>Evento</h3>
+  <p><code>valorAlterado</code> emite <code>{{ documentation.eventType }}</code> na interação do usuário. Atualizações pelo Angular Forms não emitem esse evento.</p>
+  <h3>Modelo de dados</h3>
+  <p>{{ documentation.modelDescription }}</p>
+  <pre tabindex="0" aria-label="Modelo de dados"><code>{{ documentation.model }}</code></pre>
+  <h3>Exemplos</h3>
+  @for (example of examples; track example.title) {
+    <h4>{{ example.title }}</h4>
+    @if (example.title === 'Exemplo com ngModel') {
+      <p>Template — exemplo.html</p>
+      <pre tabindex="0" aria-label="Template com ngModel"><code>{{ ngModelHtml() }}</code></pre>
+      <p>TypeScript — exemplo.ts</p>
+      <pre tabindex="0" aria-label="TypeScript com ngModel"><code>{{ ngModelTs() }}</code></pre>
+    } @else {
+      <pre tabindex="0" [attr.aria-label]="example.title"><code>{{ example.source }}</code></pre>
+    }
+  }
+  <h3>Estados e comportamentos</h3>
+  <ul>@for (state of documentation.states; track state) { <li>{{ state }}</li> }</ul>
+  <h3>Acessibilidade e teclado</h3>
+  <ul>@for (item of documentation.accessibility; track item) { <li>{{ item }}</li> }</ul>
+</article>

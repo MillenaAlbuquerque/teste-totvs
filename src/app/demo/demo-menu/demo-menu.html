@@ -1,0 +1,26 @@
+<nav class="menu-componentes" aria-label="Componentes">
+  <h2>Componentes</h2>
+  <ul>
+    <li>
+      <button
+        type="button"
+        [class.ativo]="componenteSelecionado() === 'select'"
+        [attr.aria-current]="componenteSelecionado() === 'select' ? 'page' : null"
+        (click)="componenteAlterado.emit('select')"
+      >
+        Select
+      </button>
+    </li>
+    <li>
+      <button
+        type="button"
+        [class.ativo]="componenteSelecionado() === 'switch'"
+        [attr.aria-current]="componenteSelecionado() === 'switch' ? 'page' : null"
+        (click)="componenteAlterado.emit('switch')"
+      >
+        Switch
+      </button>
+    </li>
+  </ul>
+  <p class="versao-angular">Angular v{{ angularVersion }}</p>
+</nav>

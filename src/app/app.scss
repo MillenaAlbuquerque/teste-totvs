@@ -1,0 +1,54 @@
+:host {
+  display: block;
+  color: #292936;
+  font-family: Arial, sans-serif;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  --demo-texto: #292936;
+  --demo-texto-secundario: #666;
+  --demo-destaque: #6c6cb4;
+  --demo-suave: #f2f2fa;
+  --demo-borda: #d8d8eb;
+  --demo-texto-sobre-destaque: #fff;
+  --demo-fundo: #fff;
+  --demo-foco: #03032f;
+  --demo-header: #535398;
+  color: var(--demo-texto);
+  background: var(--demo-fundo);
+  color-scheme: light;
+  min-height: 100dvh;
+}
+
+.demo.tema-escuro {
+  --demo-texto: #eeeef6;
+  --demo-texto-secundario: #b8b8cc;
+  --demo-destaque: #b4b4ff;
+  --demo-suave: #303047;
+  --demo-borda: #48485e;
+  --demo-texto-sobre-destaque: #181822;
+  --demo-fundo: #181822;
+  --demo-foco: #d1d1ff;
+  --demo-header: #303047;
+  color-scheme: dark;
+}
+
+.demo-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.demo-conteudo {
+  min-width: 0;
+}
+@media (max-width: 900px) {
+  .demo-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 24px;
+  }
+}

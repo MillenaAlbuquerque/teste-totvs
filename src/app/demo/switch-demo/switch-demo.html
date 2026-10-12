@@ -1,0 +1,17 @@
+<section class="exemplo" aria-labelledby="switch-simples">
+  <h2 id="switch-simples">Switch</h2>
+  <div class="switch-valor">
+    <app-switch
+      [(ngModel)]="switchAtivo"
+      [ariaLabel]="switchAriaLabel"
+      [disabled]="switchDesabilitado"
+      [style.--color-checked]="temaEscuro() ? '#b4b4ff' : switchCorLigado"
+      [style.--track-checked]="temaEscuro() ? '#55557d' : switchCorTrilha"
+    ></app-switch>
+    <p>{{ switchAtivo }}</p>
+  </div>
+  <div class="estados">
+    <po-checkbox p-label="Disabled" [(ngModel)]="switchDesabilitado"></po-checkbox>
+  </div>
+  <button type="button" (click)="switchAtivo = !switchAtivo">Alterar via página</button>
+</section>

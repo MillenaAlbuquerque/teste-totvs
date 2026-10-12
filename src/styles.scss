@@ -1,0 +1,119 @@
+@import '@po-ui/style/css/po-theme-default.min.css';
+
+body {
+  margin: 0;
+}
+
+app-root .demo {
+  font-size: 1rem;
+  --font-size-default: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.75rem;
+}
+
+app-root .demo po-tab-button,
+app-root .demo po-input,
+app-root .demo po-label {
+  --font-size: 1rem;
+}
+
+app-root po-tabs {
+  --padding-tabs-header: 0;
+}
+
+app-root po-tabs,
+app-root po-tab-button {
+  --color: var(--demo-destaque);
+  --background-item-selected: var(--demo-suave);
+  --color-hover: var(--demo-texto);
+  --background-item-hover: var(--demo-suave);
+  --outline-color-focused: var(--demo-foco);
+  --color-baseline: var(--demo-borda);
+}
+
+app-root .tema-escuro app-select {
+  --color: #9999b8;
+  --background: #242432;
+  --text-color: #eeeef6;
+  --text-color-empty: #b8b8cc;
+  --color-hover: #b4b4ff;
+  --background-hover: #303047;
+  --color-focused: #b4b4ff;
+  --outline-color-focused: #d1d1ff;
+  --color-disabled: #62627a;
+  --background-disabled: #292936;
+  --color-error: #ff9292;
+
+  select {
+    color-scheme: dark;
+  }
+
+  option {
+    background-color: var(--background);
+    color: var(--text-color);
+  }
+
+  option:disabled {
+    color: var(--text-color-empty);
+  }
+
+  option[value=''] {
+    color: var(--text-color);
+  }
+}
+
+app-root .tema-escuro app-switch {
+  --color-unchecked: #242432;
+  --border-color: #b8b8cc;
+  --track-unchecked: #48485e;
+  --color-unchecked-hover: #303047;
+  --color-checked-hover: #d1d1ff;
+  --outline-color-focused: #d1d1ff;
+  --color-unchecked-disabled: #303047;
+  --color-checked-disabled: #62627a;
+}
+
+app-root .tema-escuro po-checkbox {
+  --color-brand-01-darker: var(--demo-texto);
+  --color-brand-01-darkest: var(--demo-destaque);
+  --color-unchecked: #242432;
+  --color-checked: #b4b4ff;
+  --border-color: #b8b8cc;
+  --color-hover: #d1d1ff;
+  --outline-color-focused: #d1d1ff;
+}
+
+app-root .tema-escuro po-label {
+  --text-color: #eeeef6;
+}
+
+app-root .tema-escuro po-input {
+  --color: #9999b8;
+  --text-color: #eeeef6;
+  --text-color-placeholder: #b8b8cc;
+  --background: #242432;
+  --background-hover: #303047;
+  --color-hover: #b4b4ff;
+  --color-focused: #b4b4ff;
+  --outline-color-focused: #d1d1ff;
+}
+
+app-root .nova-opcao po-field-container-bottom {
+  --padding-bottom: 0;
+}
+
+app-root .nova-opcao po-input .po-field-container-content {
+  padding-bottom: 0;
+}
+
+app-root .demo app-select {
+  display: block;
+  width: 20rem;
+  max-width: 100%;
+
+  .select-container,
+  select {
+    width: 100%;
+    min-width: 0;
+  }
+}

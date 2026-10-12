@@ -1,0 +1,29 @@
+<button
+  type="button"
+  class="switch"
+  role="switch"
+  [class.switch-checked]="valor()"
+  [attr.aria-checked]="valor()"
+  [attr.aria-label]="ariaLabel()"
+  (click)="alternar()"
+  [disabled]="estaDesabilitado()"
+  (blur)="onTouched()"
+>
+  <span class="switch-track" aria-hidden="true"></span>
+  <span class="switch-key" aria-hidden="true">
+    @if (valor()) {
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="switch-icon lucide lucide-check"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    }
+  </span>
+</button>

@@ -1,0 +1,118 @@
+:host {
+  display: inline-block;
+
+  --color-unchecked: #fff;
+  --border-color: #666;
+  --track-unchecked: #eee;
+  --color-checked: #4444A0;
+  --track-checked: #9797CD;
+  --color-unchecked-hover: #ebebf4;
+  --color-checked-hover: #41417b;
+  --outline-color-focused: #03032F;
+  --color-unchecked-disabled: #eee;
+  --color-checked-disabled: #aaa;
+}
+
+.switch {
+ 
+  position: relative;
+  display: block;
+  width: 3rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.switch-track {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1rem;
+  border-radius: 1rem;
+  background-color: var(--track-unchecked);
+  transform: translateY(-50%);
+  transition: background-color 250ms ease-out;
+}
+
+.switch-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 100%;
+  background-color: var(--color-unchecked);
+  transition: left 250ms ease-out,
+  background-color 250ms ease-out,
+  border-color 250ms ease-out;
+}
+
+.switch-checked .switch-key {
+  left: 1.5rem;
+  border-color: transparent;
+  background-color: var(--color-checked);
+}
+
+.switch-checked .switch-track {
+  background-color: var(--track-checked);
+}
+
+.switch-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-unchecked);
+}
+
+/* Hover desligado */
+.switch:hover:not(:disabled):not(.switch-checked) .switch-key {
+  background-color: var(--color-unchecked-hover);
+  border-color: var(--color-checked-hover);
+}
+
+/* Hover ligado */
+.switch-checked:hover:not(:disabled) .switch-key {
+  background-color: var(--color-checked-hover);
+}
+
+/* Foco pelo teclado */
+.switch:focus-visible {
+  outline: 3px solid var(--outline-color-focused);
+  outline-offset: 2px;
+  border-radius: 1rem;
+}
+
+.switch:disabled {
+  cursor: not-allowed;
+}
+
+.switch:disabled .switch-track {
+  background-color: var(--track-unchecked);
+}
+
+.switch:disabled:not(.switch-checked) .switch-key {
+  background-color: var(--color-unchecked-disabled);
+  border-color: var(--color-checked-disabled);
+}
+
+.switch-checked:disabled .switch-key {
+  background-color: var(--color-checked-disabled);
+}
+
+.switch:disabled .switch-icon {
+  color: var(--color-unchecked-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch-key,
+  .switch-track {
+    transition: none;
+  }
+}

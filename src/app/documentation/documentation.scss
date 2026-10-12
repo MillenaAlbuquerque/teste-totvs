@@ -1,0 +1,16 @@
+:host { display: block; min-width: 0; color: var(--demo-texto); }
+article { padding: 24px; line-height: 1.6; }
+h2 { margin: 0 0 20px; font-size: 1.5rem; color: var(--demo-texto); }
+h3 { margin: 28px 0 8px; color: var(--demo-destaque); font-size: 1rem; }
+h4 { margin: 20px 0 8px; font-size: 1rem; }
+p { margin: 8px 0 16px; }
+li { margin-bottom: 8px; }
+code { font-family: Consolas, monospace; color: inherit; background: transparent; font-size: .875em; }
+pre { max-width: 100%; box-sizing: border-box; margin: 0; padding: 16px; overflow-x: auto; border: 1px solid var(--demo-borda); border-radius: 4px; background: var(--demo-suave); color: var(--demo-texto); font-size: .875rem; line-height: 1.6; }
+pre code { font-size: inherit; }
+.tabela { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+th, td { padding: 12px; border: 1px solid var(--demo-borda); text-align: left; vertical-align: top; }
+thead { background: var(--demo-suave); }
+pre:focus-visible, .tabela:focus-visible { outline: 2px solid var(--demo-foco); outline-offset: 2px; }
+@media (max-width: 700px) { article { padding: 16px; } }

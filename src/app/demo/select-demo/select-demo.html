@@ -1,0 +1,87 @@
+<section class="exemplo" aria-labelledby="select-simples">
+  <div class="select-estados">
+    <div class="previa-select">
+      <h2 id="select-simples">Select</h2>
+      <app-select
+        [options]="opcoesExemplo"
+        [placeholder]="selectInstrucao"
+        ariaLabel="Categoria"
+        [disabled]="selectDesabilitado"
+        [error]="selectErro"
+        [required]="selectObrigatorio"
+        [(ngModel)]="categoriaSelecionada"
+      ></app-select>
+    </div>
+    <section class="propriedades" aria-labelledby="propriedades-select">
+      <h3 id="propriedades-select">Propriedades</h3>
+      <div class="estados">
+        <po-checkbox p-label="Disabled" [(ngModel)]="selectDesabilitado"></po-checkbox>
+        <po-checkbox p-label="Error" [(ngModel)]="selectErro"></po-checkbox>
+        <po-checkbox p-label="Required" [(ngModel)]="selectObrigatorio"></po-checkbox>
+      </div>
+    </section>
+  </div>
+  <p class="selecionado">Selecionado: {{ nomeCategoriaSelecionada }}</p>
+  <button type="button" (click)="categoriaSelecionada = ''">Limpar seleção</button>
+  <section class="editor-opcoes" aria-labelledby="titulo-opcoes">
+    <h3 id="titulo-opcoes">Opções disponíveis</h3>
+    <div class="conteudo-opcoes">
+      <ul class="lista-opcoes">
+        @for (opcao of opcoesExemplo; track opcao.value) {
+          <li class="linha-opcao">
+            <span
+              >{{ opcao.label }} · valor {{ opcao.value }}
+              @if (opcao.disabled) {
+                <span class="opcao-desabilitada"> · desabilitada</span>
+              }
+            </span>
+            <button
+              type="button"
+              class="remover-opcao"
+              [attr.aria-label]="'Remover ' + opcao.label"
+              (click)="removerOpcao(opcao.value)"
+            >
+              ×
+            </button>
+          </li>
+        } @empty {
+          <li class="lista-vazia">Nenhuma opção adicionada.</li>
+        }
+      </ul>
+      @if (mostrarNovaOpcao) {
+        <div class="nova-opcao">
+          <po-input
+            p-label="Label"
+            [p-auto-focus]="true"
+            [p-emit-all-changes]="true"
+            [p-maxlength]="limiteTextoOpcao"
+            [(ngModel)]="novaOpcao"
+            (p-enter)="adicionarOpcao()"
+          ></po-input>
+          <po-input
+            p-label="Value"
+            [p-emit-all-changes]="true"
+            [(ngModel)]="novoValorOpcao"
+            (p-enter)="adicionarOpcao()"
+          ></po-input>
+          <button type="button" [disabled]="!podeAdicionarOpcao" (click)="adicionarOpcao()">
+            Adicionar
+          </button>
+        </div>
+        <small class="contador-opcao"
+          >Label: {{ novaOpcao.length }}/{{ limiteTextoOpcao }} caracteres. Value deve ser único e
+          não pode ficar vazio.</small
+        >
+        @if (valorOpcaoRepetido) {
+          <small class="contador-opcao" role="status"
+            >Esse value já existe. Escolha outro identificador.</small
+          >
+        }
+      } @else {
+        <button type="button" class="abrir-nova-opcao" (click)="mostrarNovaOpcao = true">
+          + Adicionar opção
+        </button>
+      }
+    </div>
+  </section>
+</section>

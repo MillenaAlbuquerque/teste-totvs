@@ -1,0 +1,44 @@
+<div class="select-container">
+  <select
+    [attr.aria-label]="ariaLabel()"
+    [value]="valor()"
+    [class.empty]="valor() === ''"
+    (change)="selecionar(campo.value)"
+    [disabled]="disabled() || desabilitadoPeloFormulario()"
+    [attr.aria-invalid]="error() ? 'true' : null"
+    [required]="required()"
+    (blur)="aoTocar()"
+    #campo
+  >
+    <option value="" disabled [selected]="valor() === ''">
+      {{ placeholder() }}
+    </option>
+
+    @for (opcao of options(); track opcao.value) {
+      <option
+        [value]="opcao.value"
+        [disabled]="opcao.disabled === true"
+        [selected]="opcao.value === valor()"
+      >
+        {{ opcao.label }}
+      </option>
+    }
+  </select>
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="select-icon"
+  >
+    <path d="m6 9 6 6 6-6" />
+  </svg>
+</div>

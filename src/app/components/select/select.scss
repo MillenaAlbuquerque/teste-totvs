@@ -1,0 +1,102 @@
+:host {
+  --color: #666;
+  --background: #fff;
+  --padding-horizontal: 0.5em;
+  --padding-vertical: 0.7em;
+  --color-hover: #535398;
+  --background-hover: #EBEBF4;
+  --color-focused: #0057b8;
+  --outline-color-focused: #03032F;
+  --color-disabled: #aaa;
+  --background-disabled: #eee;
+  --color-error: #c62828;
+  --text-color-empty: #777;
+  --text-color: #222;
+  --font-family:  Arial, sans-serif;
+  --font-size: 1em;
+}
+
+select {
+  font: inherit;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: normal;
+  box-sizing: border-box;
+  min-height: 2.75em;
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  border: 1px solid var(--color);
+  background-color: var(--background);
+  border-radius: 4px;
+  color: var(--text-color);
+  appearance: none;
+  padding-right: calc(var(--padding-horizontal) + 1.5em);
+  
+}
+
+option {
+  color: var(--text-color);
+}
+
+option:disabled {
+  color: var(--text-color-empty);
+}
+
+.select-icon {
+  position: absolute;
+  right: var(--padding-horizontal);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1em;
+  height: 1em;
+  color: var(--color);
+  pointer-events: none;
+
+}
+
+select:hover:not(:disabled) + .select-icon {
+  color: var(--color-hover);
+}
+
+select:focus + .select-icon {
+  color: var(--color-focused);
+}
+
+select[aria-invalid="true"]:not(:disabled) + .select-icon {
+  color: var(--color-error);
+}
+
+select:disabled + .select-icon {
+  color: var(--color-disabled);
+}
+
+select:hover:not(:disabled) {
+  border-color: var(--color-hover);
+  background-color: var(--background-hover);
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: var(--color-focused);
+  outline: 2px solid var(--outline-color-focused);
+  outline-offset: 2px;
+}
+
+select:disabled {
+  border-color: var(--color-disabled);
+  background-color: var(--background-disabled);
+  cursor: not-allowed;
+}
+
+select[aria-invalid="true"]:not(:disabled) {
+  border-color: var(--color-error);
+  background-color: var(--background);
+}
+
+select.empty:not(:disabled) {
+  color: var(--text-color-empty);
+}
+
+.select-container {
+  position: relative;
+  display: inline-block;
+}

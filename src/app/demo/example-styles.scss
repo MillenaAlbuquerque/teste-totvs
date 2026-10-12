@@ -1,0 +1,48 @@
+.exemplo {
+  margin-top: 20px;
+  padding: 10px;
+
+  h2 {
+    margin: 0 0 20px;
+    font-size: 1.125rem;
+    color: var(--demo-texto);
+  }
+
+  p {
+    margin: 16px 0;
+    overflow-wrap: anywhere;
+  }
+
+  button {
+    margin: 4px 8px 4px 0;
+    padding: 8px 12px;
+    border: 1px solid var(--demo-destaque);
+    border-radius: 4px;
+    background: var(--demo-suave);
+    color: var(--demo-destaque);
+    font: inherit;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background: var(--demo-destaque);
+      color: var(--demo-texto-sobre-destaque);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--demo-foco);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.estados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px 0;
+}

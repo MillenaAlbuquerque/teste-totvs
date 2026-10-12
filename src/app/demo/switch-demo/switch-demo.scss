@@ -1,0 +1,16 @@
+@use '../example-styles';
+:host {
+  display: block;
+}
+.switch-valor {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+
+  p {
+    margin: 0;
+  }
+}
+
+:host([hidden]) { display: none; }

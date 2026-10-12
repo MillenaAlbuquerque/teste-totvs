@@ -1,0 +1,35 @@
+<main class="demo" [class.tema-escuro]="temaEscuro">
+  <app-demo-header
+    [temaEscuro]="temaEscuro"
+    (temaAlterado)="temaEscuro = !temaEscuro"
+  ></app-demo-header>
+
+  <div class="demo-layout">
+    <app-demo-menu
+      [componenteSelecionado]="componenteSelecionado"
+      (componenteAlterado)="componenteSelecionado = $event"
+    ></app-demo-menu>
+    <div class="demo-conteudo">
+      <po-tabs>
+        <po-tab p-label="Documentação" [p-active]="true">
+          <app-component-documentation
+            [component]="componenteSelecionado"
+            [ngModelHtml]="
+              componenteSelecionado === 'select' ? exemploSelectHtml : exemploSwitchHtml
+            "
+            [ngModelTs]="componenteSelecionado === 'select' ? exemploSelectTs : exemploSwitchTs"
+          ></app-component-documentation>
+        </po-tab>
+        <po-tab p-label="Exemplo">
+          <div class="demo-exemplos">
+            <app-select-demo [hidden]="componenteSelecionado !== 'select'"></app-select-demo>
+            <app-switch-demo
+              [hidden]="componenteSelecionado !== 'switch'"
+              [temaEscuro]="temaEscuro"
+            ></app-switch-demo>
+          </div>
+        </po-tab>
+      </po-tabs>
+    </div>
+  </div>
+</main>

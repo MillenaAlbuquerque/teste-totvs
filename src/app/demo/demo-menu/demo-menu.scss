@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  min-width: 0;
+}
+.menu-componentes {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 15px 0px;
+  border: 1px solid var(--demo-borda);
+  border-radius: 4px;
+  background: var(--demo-fundo);
+
+  h2 {
+    margin: 0 10px 12px;
+    font-size: 1.25rem;
+    color: var(--demo-destaque);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li + li {
+    margin-top: 0px;
+    font-weight: 600;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 34px;
+    border: 0;
+    background: transparent;
+    color: var(--demo-destaque);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--demo-suave);
+    }
+
+    &.ativo {
+      background: var(--demo-destaque);
+      color: var(--demo-texto-sobre-destaque);
+      font-weight: bold;
+      border-left: 4px solid var(--demo-header);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--demo-foco);
+      outline-offset: 2px;
+    }
+  }
+}
+
+.versao-angular {
+  margin: auto 0 0;
+  padding: 22px 14px 0;
+  color: var(--demo-header);
+  font-size: 1rem;
+}
